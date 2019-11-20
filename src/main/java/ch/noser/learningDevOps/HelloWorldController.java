@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
-    @GetMapping("/")
-    public String helloWorld() {
-        return "Hello World!";
+    @GetMapping(value="/", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String index() {
+        return "Working!";
     }
 }
