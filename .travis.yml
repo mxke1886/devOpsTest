@@ -1,10 +1,15 @@
 language: java
 
+jobs:
+  include:
+    - stage: CodeQuality
+      script: ./gradlew sonarqube
+
 addons:
   sonarcloud:
-    organization: "mxke1886"
+    organization: $SONAR_USER
     token:
-      secure: "**************************" # encrypted value of your token
+      secure: $SONAR_TOKEN
 
-script:
-  - ./gradlew sonarqube
+jdk:
+  - openjdk11
