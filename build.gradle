@@ -35,7 +35,7 @@ test {
 }
 
 docker {
-	name 'mxke1886/devOpsTest'
+	name 'mike12ch/devopstest'
 	tags 'latest'
 	dockerfile file('Dockerfile')
 	files war.archiveFile
