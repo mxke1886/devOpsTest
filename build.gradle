@@ -3,7 +3,9 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 	id 'war'
+	id "jacoco"
 	id "org.sonarqube" version "2.8"
+	id "com.palantir.docker" version "0.22.1"
 }
 
 group = 'ch.noser'
@@ -30,4 +32,13 @@ sonarqube {
 }
 test {
 	useJUnitPlatform()
+}
+
+docker {
+	name 'mxke1886/devOpsTest'
+	tags 'latest'
+	dockerfile file('Dockerfile')
+	files war.archiveFile
+	pull true
+	noCache true
 }
