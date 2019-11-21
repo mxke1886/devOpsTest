@@ -42,3 +42,5 @@ docker {
 	pull true
 	noCache true
 }
+
+docker.dependsOn bootWar
